@@ -413,10 +413,10 @@
                 class="breadcrumb-item text-sm text-dark active"
                 aria-current="page"
               >
-                Dashboard
+                Dashboard Story
               </li>
             </ol>
-            <h6 class="font-weight-bolder mb-0">Dashboard</h6>
+            <h6 class="font-weight-bolder mb-0">Dashboard Story</h6>
           </nav>
           <div
             class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
@@ -438,7 +438,7 @@
               <li class="nav-item d-flex align-items-center">
                 <a href="" class="nav-link text-body font-weight-bold px-0">
                   <i class="fa fa-user me-sm-1"></i>
-                  <span class="d-sm-inline d-none">Group 2</span>
+                  <span class="d-sm-inline d-none">Group 5</span>
                 </a>
               </li>
             </ul>
@@ -448,69 +448,158 @@
       <!-- End Navbar -->
       <div class="container-fluid py-4">
         <div class="row mt-4">
-          <div class="col-lg-5">
-            <div class="card z-index-2">
-              <!-- <div class="card-header pb-0">
-                <h6>Sales overview</h6>
-                <p class="text-sm">
-                  <i class="fa fa-arrow-up text-success"></i>
-                  <span class="font-weight-bold">4% more</span> in 2021
-                </p>
-              </div>
-              <div class="card-body p-3">
-                <div class="chart">
-                  <canvas
-                    id="chart-line"
-                    class="chart-canvas"
-                    height="300"
-                  ></canvas>
-                </div>
-              </div> -->
-              <script
-                type="module"
-                src="https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
-              ></script>
-              <tableau-viz
-                id="tableau-viz"
-                src="https://prod-apnortheast-a.online.tableau.com/t/airpoll/views/airpollution/Amongcontinent"
-                width="1862"
-                height="940"
-                hide-tabs
-                toolbar="bottom"
-              ></tableau-viz>
-            </div>
+          <div class="col-lg-12">
+            <h2>I. Introduction</h2>
+            <p>
+              Air pollution is one of the greatest environmental risk to health.
+              By reducing air pollution levels, countries can reduce the burden
+              of disease from stroke, heart disease, lung cancer, and both
+              chronic and acute respiratory diseases, including asthma. By
+              looking at the dataset collected from WHO, we hope to find out the
+              true picture that lead to serious air pollution currently,
+              worldwide as well as in Vietnam.
+            </p>
           </div>
-          <div class="col-lg-7">
-            <div class="card z-index-2">
-              <!-- <div class="card-header pb-0">
-                <h6>Sales overview</h6>
-                <p class="text-sm">
-                  <i class="fa fa-arrow-up text-success"></i>
-                  <span class="font-weight-bold">4% more</span> in 2021
-                </p>
-              </div>
-              <div class="card-body p-3">
-                <div class="chart">
-                  <canvas
-                    id="chart-line"
-                    class="chart-canvas"
-                    height="300"
-                  ></canvas>
-                </div>
-              </div> -->
-              <script
-                type="module"
-                src="https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
-              ></script>
-              <tableau-viz
-                id="tableau-viz"
-                src="https://prod-apnortheast-a.online.tableau.com/t/airpoll/views/airpollution/Worldwide"
-                width="1862"
-                height="940"
-                hide-tabs
-                toolbar="bottom"
-              ></tableau-viz>
-            </div>
+          <div class="col-lg-12">
+            <h2>II. About Dataset:</h2>
+            <p>
+              General: Collecting data on WHO Database Website of the database:
+            </p>
+            <p>
+              <a
+                href="https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database"
+              >
+                https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database
+              </a>
+            </p>
+            <p>
+              This database was released in April 2022 (5th edition) and the
+              years of measurement range mostly from 2010 to 2019. The WHO air
+              quality database compiles data on ground measurements of annual
+              mean concentrations of nitrogen dioxide (NO2), particulate matter
+              of a diameter equal or smaller than 10 μm (PM10) or equal or
+              smaller than 2.5 μm (PM2.5) which aim at representing an average
+              for the city or town as a whole, rather than for individual
+              stations. Both groups of pollutants originate mainly from human
+              activities related to fossil fuel combustion.
+            </p>
+            <h2>III. Data Analysis</h2>
+            <h4>Data Analysis</h4>
+            <iframe
+              src="./plot2.html"
+              height="500"
+              width="1000"
+              style="border: none"
+            ></iframe>
+            <p>
+              We can see that this dataset contains information about 3
+              different kinds of air pollution: PM2.5, PM10, NO2.
+            </p>
+            <p>
+              - Particulate matter (PM): is a common proxy indicator for air
+              pollution. There is strong evidence for the negative health
+              impacts associated with exposure to this pollutant. The major
+              components of PM are sulfates, nitrates, ammonia, sodium chloride,
+              black carbon, mineral dust and water. Particulate matter of a
+              diameter equal or smaller than 10 μm is called PM10, or equal or
+              smaller than 2.5 μm is called PM2.5. Emissions from combustion of
+              gasoline, oil, diesel fuel or wood produce much of the PM2. 5
+              pollution found in outdoor air, as well as a significant
+              proportion of PM10.
+            </p>
+            <p>
+              - NO2:is a gas that is commonly released from the combustion of
+              fuels in the transportation and industrial sectors.
+            </p>
+          </div>
+          <div class="col-lg-12">
+            <h4>Where does the polluted air come from?</h4>
+            <script
+              type="module"
+              src="https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
+            ></script>
+            <tableau-viz
+              id="tableau-viz"
+              src="https://prod-apnortheast-a.online.tableau.com/t/airpoll/views/airpollution/Worldwide"
+              width="1862"
+              height="940"
+              hide-tabs
+              toolbar="bottom"
+            ></tableau-viz>
+            <p>
+              In general, the size represents PM10 and the color represents
+              PM2.5. At the first glance, it is noticeable that in 2019 most PMs
+              concentrated in areas in India, Europe and China. It seems that
+              India was the region that had the highest average concentration,
+              in both PM10 and PM2.5.
+            </p>
+          </div>
+          <div class="col-lg-12">
+            <h4>Continental Analysis</h4>
+            <p>
+              Secondly, we will analyze data with respect to the continents.
+              Which continents have the highest concentration of air pollution?
+            </p>
+            <script
+              type="module"
+              src="https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
+            ></script>
+            <tableau-viz
+              id="tableau-viz"
+              src="https://prod-apnortheast-a.online.tableau.com/t/airpoll/views/airpollution/Amongcontinent"
+              width="1862"
+              height="940"
+              hide-tabs
+              toolbar="bottom"
+            ></tableau-viz>
+          </div>
+          <div class="col-lg-12">
+            <p>
+              So we can see that during the period from 2010 to 2019, Eastern
+              Mediterranean was the region having the highest average polluted
+              air concentration, in which PM10 and NO2 concentration were more
+              than other regions, at 90.76 and 29.76 μg/m3 respectively.
+              Standing at the first position in PM2.5 rank was Western Pacific
+              Region with 39.19.13μg/m3, followed by the Eastern Mediterranean
+              with 34.71μg/m3.
+            </p>
+            <iframe
+              src="./plot3.html"
+              height="500"
+              width="1000"
+              style="border: none"
+            ></iframe>
+          </div>
+          <div class="col-lg-12">
+            <p>
+              Now, let’s see of picture change if we add the countries
+              dimensionality.
+            </p>
+            <h4>Continental Analysis with added Countries dimensionality</h4>
+            <iframe
+              src="./plot0.html"
+              height="500"
+              width="1000"
+              style="border: none"
+            ></iframe>
+            <ul>
+              <li>
+                Countries in the Mediterranean region largely have the highest
+                share of PM10 among other regions.
+              </li>
+              <li>
+                The region of the Americas and Europe has the lowest overall
+                PM10 levels among the regions.
+              </li>
+              <li>
+                The Western Pacific region and the Eastern Mediterranean region
+                have the highest NO2 levels among the regions.
+              </li>
+              <li>
+                The country with the best air quality is Myanmar (orange color)
+                in the South East Asia Region.
+              </li>
+            </ul>
           </div>
         </div>
         <div class="row my-4">
