@@ -57,6 +57,11 @@
   </head>
 
   <body class="g-sidenav-show bg-gray-100">
+    <style>
+      p {
+        text-align: justify;
+      }
+    </style>
     <aside
       class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3"
       id="sidenav-main"
@@ -447,7 +452,7 @@
       </nav>
       <!-- End Navbar -->
       <div class="container-fluid py-4">
-        <div class="row mt-4">
+        < class="row mt-4">
           <div class="col-lg-12">
             <h2>I. Introduction</h2>
             <p>
@@ -462,16 +467,13 @@
           </div>
           <div class="col-lg-12">
             <h2>II. About Dataset:</h2>
-            <p>
-              General: Collecting data on WHO Database Website of the database:
-            </p>
-            <p>
-              <a
-                href="https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database"
-              >
-                https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database
-              </a>
-            </p>
+            <h4>1. Collecting data on WHO Database</h4>
+
+            <p>Website of the database:</p>
+            <a
+              href="https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database"
+              >https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database</a
+            >
             <p>
               This database was released in April 2022 (5th edition) and the
               years of measurement range mostly from 2010 to 2019. The WHO air
@@ -483,8 +485,56 @@
               stations. Both groups of pollutants originate mainly from human
               activities related to fossil fuel combustion.
             </p>
+            <h4>2. Dataset on air quality in Vietnam in 2021</h4>
+            <p>Website of the database:</p>
+            <a
+              href="https://data.opendevelopmentmekong.net/dataset/dataset-on-air-quality-in-vietnam-in-2021/resource/cb84dfe9-2ae6-46b5-b007-83bf2e63da2d?view_id=aa524509-2387-40be-a220-b5a91f6aae56"
+              >https://data.opendevelopmentmekong.net/dataset/dataset-on-air-quality-in-vietnam-in-2021/resource/cb84dfe9-2ae6-46b5-b007-83bf2e63da2d?view_id=aa524509-2387-40be-a220-b5a91f6aae56</a
+            >
+            <h5>Additional Information</h5>
+            <table>
+              <style>
+                table,
+                th,
+                td {
+                  border: 1px solid black;
+                }
+                th,
+                td {
+                  padding: 5px;
+                }
+              </style>
+              <tr>
+                <th>Field</th>
+                <th>Value</th>
+              </tr>
+              <tr>
+                <td>Last updated</td>
+                <td>December 1, 2021</td>
+              </tr>
+              <tr>
+                <td>Created</td>
+                <td>January 21, 2021</td>
+              </tr>
+              <tr>
+                <td>Format</td>
+                <td>CSV</td>
+              </tr>
+              <tr>
+                <td>License</td>
+                <td>Creative Commons Attribution Share-Alike</td>
+              </tr>
+              <tr>
+                <td>Name</td>
+                <td>[English] Dataset on air quality in Vietnam in 2021</td>
+              </tr>
+              <tr>
+                <td>Resource's languages</td>
+                <td>English</td>
+              </tr>
+            </table>
             <h2>III. Data Analysis</h2>
-            <h4>Data Analysis</h4>
+            <h4>1. Global Data Analysis</h4>
             <iframe
               src="./plot2.html"
               height="500"
@@ -601,8 +651,86 @@
               </li>
             </ul>
           </div>
+          <div class="col-lg-12">
+            <h4>2. What about Vietnam?</h4>
+            <p>First of all, we should know the size of our data.</p>
+            <iframe
+              src="../../Vietnam/plot0.html"
+              height="500"
+              width="1000"
+              style="border: none"
+            ></iframe>
+            <iframe
+              src="../../Vietnam/plot2.html"
+              height="500"
+              width="1000"
+              style="border: none"
+            ></iframe>
+          </div>
+          <div class="col-lg-12">
+            <iframe
+            src=""
+            height="500"
+            width="1000"
+            style="border: none"
+          ></iframe>
+          <ul>
+            <li>In general, the index of Lao cai is the highest air pollution in VN</li>
+            <li>So2 concentration in the air is very high that makes Lao cai become the one of the highest pollution areas in VietNam. Depending on the information of newspaper , example: <a href = "https://vietbao.vn/lao-cai-gan-100-ty-dong-ho-tro-dan-roi-khoi-vung-o-nhiem-moi-truong-295417.html">https://vietbao.vn/lao-cai-gan-100-ty-dong-ho-tro-dan-roi-khoi-vung-o-nhiem-moi-truong-295417.html</a>. </li>
+            <li>Secondly, Ha Noi's rate of Pm2.5 is so high. Pm2.5 is very harmful for health . Especially, it is one of the main reason to lead many serious disease about respiratory. </li>
+            <li>Conclusion:</li>
+          </ul>
+          </div>
+          <div class="col-lg-12">
+            <h6>Timeline Analysis</h6>
+            <iframe
+            src=""
+            height="500"
+            width="1000"
+            style="border: none"
+          ></iframe>
+          <iframe
+          src=""
+          height="500"
+          width="1000"
+          style="border: none"
+        ></iframe>
+          </div>
+          <div class="col-lg-12">
+            <h6>All together now (Linear Regression)</h6>
+            <p>Okay, that's enough of analyzing the isolated parameters. We have observed some fantastics statistics, but is it relevant to our problem?
+            </p>
+            <p>We are trying to predict the Air Quality Index (AQI), based on the concentration of different air pollutants, including ozone (O3), nitrogen oxide (NOx), carbon monoxide (CO), and fine particulate matter such as PM2.5 and PM10. These concentrations are measured and recorded at air quality monitoring stations and then calculated to generate the AQI.</p>
+            <p>The features related to AQI using this regression analysis:
+            </p>
+            <ul>
+              <li>CO</li>
+              <li>NO2</li>
+              <li>PM10</li>
+              <li>PM2.5</li>
+              <li>SO2</li>
+              <li>O3</li>
+            </ul>
+          </div>
+          <div class="col-lg-12">
+            <h6>Dataset: Vietnamese.csv</h6>
+            <ul>
+              <li>Trong bài toán chất lượng không khí này với tập Dataset Vietnamese.csv
+                Nhóm đã quyết định sử dụng mô hình Linear Regression để phân tích dữ liệu chất lượng không khí ở Việt Nam. 
+                </li>
+              <li>Đầu tiên, nhóm đã sử dụng những dữ liệu từ các trạm quan trắc chất lượng không khí trên khắp Việt Nam. Dữ liệu này bao gồm các chỉ số như PM2.5, PM10, CO, NO2, và SO2,.... Ngoài ra cũng có những thu thập thông tin về điều kiện thời tiết và địa lý của các khu vực tương ứng. Tiếp đó sử dụng các kỹ thuật để tiền xử lý dữ liệu làm cho dữ liệu sạch hơn</li>
+              <li>
+                <p>Để thấy rõ hơn sự tương quan hơn giữa các nhãn dữ liệu nhóm đã sử dụng các biểu đồ như Heatmap để biểu diễn qua đó có cái nhìn tổng quát và hiểu rõ hơn về dữ liệu sử dụng trong mô hình. </p>
+                <img src="../../Vietnam/plot1.png" alt="plot1">
+              </li>
+              <li>Khi đó nhóm bắt đầu xây dựng mô hình Linear Regression dựa trên bộ dữ liệu này:
+                <p>Lần 1: Ở lần áp dụng mô hình đầu tiên nhóm sử dụng các trường dữ liệu PM10 và PM2.5 để đưa ra kết quả chạy thử. Cho độ chính xác ở mức 91.8 %</p>
+                <p>Lần 2: Ở lần áp dụng mô hình đầu tiên nhóm sử dụng các trường dữ liệu PM10 và PM2.5 cùng với những dữ liệu liên quan đến khí và sương mù như O3, CO , NO2  để đưa ra kết quả chạy thử. Cho độ chính xác ở mức 91.9% tuy cải thiện không nhiều nhưng với độ chính xác này mô hình cũng được đánh giá là chất lượng và có độ tinh cậy cao. </p>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="row my-4">
+        <!-- <div class="row my-4">
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Authors table</h6>
@@ -783,7 +911,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <footer class="footer pt-3">
           <div class="container-fluid">
             <div class="row align-items-center justify-content-lg-between">
