@@ -57,6 +57,11 @@
   </head>
 
   <body class="g-sidenav-show bg-gray-100">
+    <style>
+      p {
+        text-align: justify;
+      }
+    </style>
     <aside
       class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3"
       id="sidenav-main"
@@ -462,16 +467,13 @@
           </div>
           <div class="col-lg-12">
             <h2>II. About Dataset:</h2>
-            <p>
-              General: Collecting data on WHO Database Website of the database:
-            </p>
-            <p>
-              <a
-                href="https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database"
-              >
-                https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database
-              </a>
-            </p>
+            <h4>1. Collecting data on WHO Database</h4>
+
+            <p>Website of the database:</p>
+            <a
+              href="https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database"
+              >https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database</a
+            >
             <p>
               This database was released in April 2022 (5th edition) and the
               years of measurement range mostly from 2010 to 2019. The WHO air
@@ -483,8 +485,56 @@
               stations. Both groups of pollutants originate mainly from human
               activities related to fossil fuel combustion.
             </p>
+            <h4>2. Dataset on air quality in Vietnam in 2021</h4>
+            <p>Website of the database:</p>
+            <a
+              href="https://data.opendevelopmentmekong.net/dataset/dataset-on-air-quality-in-vietnam-in-2021/resource/cb84dfe9-2ae6-46b5-b007-83bf2e63da2d?view_id=aa524509-2387-40be-a220-b5a91f6aae56"
+              >https://data.opendevelopmentmekong.net/dataset/dataset-on-air-quality-in-vietnam-in-2021/resource/cb84dfe9-2ae6-46b5-b007-83bf2e63da2d?view_id=aa524509-2387-40be-a220-b5a91f6aae56</a
+            >
+            <h5>Additional Information</h5>
+            <table>
+              <style>
+                table,
+                th,
+                td {
+                  border: 1px solid black;
+                }
+                th,
+                td {
+                  padding: 5px;
+                }
+              </style>
+              <tr>
+                <th>Field</th>
+                <th>Value</th>
+              </tr>
+              <tr>
+                <td>Last updated</td>
+                <td>December 1, 2021</td>
+              </tr>
+              <tr>
+                <td>Created</td>
+                <td>January 21, 2021</td>
+              </tr>
+              <tr>
+                <td>Format</td>
+                <td>CSV</td>
+              </tr>
+              <tr>
+                <td>License</td>
+                <td>Creative Commons Attribution Share-Alike</td>
+              </tr>
+              <tr>
+                <td>Name</td>
+                <td>[English] Dataset on air quality in Vietnam in 2021</td>
+              </tr>
+              <tr>
+                <td>Resource's languages</td>
+                <td>English</td>
+              </tr>
+            </table>
             <h2>III. Data Analysis</h2>
-            <h4>Data Analysis</h4>
+            <h4>1. Global Data Analysis</h4>
             <iframe
               src="./plot2.html"
               height="500"
@@ -511,6 +561,10 @@
               - NO2:is a gas that is commonly released from the combustion of
               fuels in the transportation and industrial sectors.
             </p>
+            <script
+              type="module"
+              src="https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
+            ></script>
           </div>
           <div class="col-lg-12">
             <h4>Where does the polluted air come from?</h4>
@@ -584,12 +638,13 @@
             ></iframe>
             <ul>
               <li>
-                Countries in the Mediterranean region largely have the highest
-                share of PM10 among other regions.
-              </li>
-              <li>
-                The region of the Americas and Europe has the lowest overall
-                PM10 levels among the regions.
+                In this diagram, it is clear that the vertical line represents
+                PM10, horizontal line represents PM2.5, the burble represents
+                the countries, the size stands for the NO2 and different colors
+                for WHO Regions. Looking at the above, we can see that countries
+                in the Mediterranean region largely have the highest share of
+                PM10 among other regions, while the region of the Americas and
+                Europe has the lowest overall PM10 levels among the regions.
               </li>
               <li>
                 The Western Pacific region and the Eastern Mediterranean region
@@ -601,8 +656,207 @@
               </li>
             </ul>
           </div>
+          <div class="col-lg-12">
+            <h4>2. What about Vietnam?</h4>
+            <p>First of all, we should know the size of our data.</p>
+            <iframe
+              src="../../Vietnam/plot0.html"
+              height="500"
+              width="1000"
+              style="border: none"
+            ></iframe>
+            <p>
+              At the first glance, we can see that nearly a half of station
+              locations in this dataset are in HaNoi with 11 stations, while the
+              second position is Bac Ninh. The data set also provides 6
+              different air pollutants: CO, NO2, O3, PM10,PM2.5 and SO2.
+            </p>
+            <iframe
+              src="../../Vietnam/plot2.html"
+              height="500"
+              width="1000"
+              style="border: none"
+            ></iframe>
+          </div>
+          <div class="col-lg-12">
+            <h4>Air Pollutants Analysis</h4>
+            <tableau-viz
+              id="tableau-viz"
+              src="https://prod-apnortheast-a.online.tableau.com/t/airpoll/views/VietNamAirPollution/AirPollutantsAmongProvinces"
+              width="1879"
+              height="910"
+              hide-tabs
+              toolbar="bottom"
+            ></tableau-viz>
+            <ul>
+              <li>
+                In general, the index of Lao cai is the highest air pollution in
+                VN
+              </li>
+              <li>
+                So2 concentration in the air is very high that makes Lao cai
+                become the one of the highest pollution areas in VietNam.
+                Depending on the information of newspaper , example:
+                <a
+                  href="https://vietbao.vn/lao-cai-gan-100-ty-dong-ho-tro-dan-roi-khoi-vung-o-nhiem-moi-truong-295417.html"
+                  >https://vietbao.vn/lao-cai-gan-100-ty-dong-ho-tro-dan-roi-khoi-vung-o-nhiem-moi-truong-295417.html</a
+                >.
+              </li>
+              <li>
+                Secondly, Ha Noi's rate of Pm2.5 is so high. Pm2.5 is very
+                harmful for health . Especially, it is one of the main reason to
+                lead many serious disease about respiratory.
+              </li>
+              <li>Conclusion:</li>
+            </ul>
+          </div>
+          <div class="col-lg-12">
+            <h6>Timeline Analysis</h6>
+            <script
+              type="module"
+              src="https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
+            ></script>
+            <tableau-viz
+              id="tableau-viz"
+              src="https://prod-apnortheast-a.online.tableau.com/t/airpoll/views/VietNamAirPollution/Airpollutantsin2021"
+              width="1879"
+              height="910"
+              hide-tabs
+              toolbar="bottom"
+            ></tableau-viz>
+            <p>
+              Overall, the most significant air pollutants in Vietnam is PM,
+              especially PM2.5, while the safe level given by WHO is 5μg/m3. On
+              the other hand, the average of AQI index is …, which is in the
+              moderate level of concern, 50-100. Especially during the Covid
+              pandemic, the AQI index came back to the safe level, 0-50.
+            </p>
+            <script
+              type="module"
+              src="https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
+            ></script>
+            <tableau-viz
+              id="tableau-viz"
+              src="https://prod-apnortheast-a.online.tableau.com/t/airpoll/views/VietNamAirPollution/AQIIndexin2021"
+              width="1879"
+              height="910"
+              hide-tabs
+              toolbar="bottom"
+            ></tableau-viz>
+          </div>
+          <div class="col-lg-12">
+            <h6>All together now (Linear Regression)</h6>
+            <p>
+              Okay, that's enough of analyzing the isolated parameters. We have
+              observed some fantastics statistics, but is it relevant to our
+              problem?
+            </p>
+            <p>
+              We are trying to predict the Air Quality Index (AQI), based on the
+              concentration of different air pollutants, including ozone (O3),
+              nitrogen oxide (NOx), carbon monoxide (CO), and fine particulate
+              matter such as PM2.5 and PM10. These concentrations are measured
+              and recorded at air quality monitoring stations and then
+              calculated to generate the AQI.
+            </p>
+            <p>The features related to AQI using this regression analysis:</p>
+            <ul>
+              <li>CO</li>
+              <li>NO2</li>
+              <li>PM10</li>
+              <li>PM2.5</li>
+              <li>SO2</li>
+              <li>O3</li>
+            </ul>
+          </div>
+          <div class="col-lg-12">
+            <h6>Dataset: Vietnamese.csv</h6>
+            <ul>
+              <li>
+                <p>
+                  In this air quality problem with the Vietnamese.csv dataset,
+                  the team has decided to use the Linear Regression model to
+                  analyze air quality data in Vietnam.
+                </p>
+              </li>
+              <li>
+                <p>
+                  First, the team used data from air quality monitoring stations
+                  throughout Vietnam. This data includes indices such as PM2.5,
+                  PM10, CO, NO2, and SO2, among others. Additionally,
+                  information on weather conditions and geographical features of
+                  the corresponding regions was also collected. Then, various
+                  techniques were employed to preprocess the data, making it
+                  cleaner and more reliable.To gain a clearer understanding of
+                  the correlations between the data labels, the team utilized
+                  visualizations such as heatmaps. These heatmaps provided a
+                  comprehensive overview and enhanced the understanding of the
+                  data used in the model.
+                </p>
+                <img src="./bieudo.png" alt="bieudo" />
+              </li>
+              <li>
+                At that point, the team began constructing the Linear Regression
+                model based on this dataset:
+                <p>
+                  Iteration 1: In the initial model application, the team used
+                  the PM10 and PM2.5 data fields to obtain preliminary results.
+                  The accuracy achieved in this trial was 91.8%.
+                </p>
+                <p>
+                  Iteration 2: In the second model application, the team used
+                  the PM10 and PM2.5 data fields along with additional data
+                  related to gasses and fog, such as O3, CO, and NO2, to conduct
+                  another trial. The accuracy achieved in this trial was 91.9%.
+                  Although there was not a significant improvement in accuracy
+                  compared to the previous iteration, with this level of
+                  accuracy, the model is still considered high quality and
+                  reliable.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-12">
+            <h4>IV. Discussion and Conclusion</h4>
+            <ul>
+              <li>
+                Overall, the dataset indicates a concerning trend of high
+                pollution levels in various regions of Vietnam. The
+                concentrations of harmful pollutants in the air, such as PM10
+                and PM2.5 fine particles, are significantly higher than the
+                permissible thresholds. This poses a serious risk to respiratory
+                health for individuals living in these areas.
+              </li>
+              <li>
+                The areas with high pollution levels are Nghệ An, Hanoi, Đà
+                Nẵng, and Ho Chi Minh City. The reasons behind this are as
+                follows: Hanoi, Ho Chi Minh City, and Đà Nẵng are major urban
+                areas with high population and industrial activities, while Nghệ
+                An is an industrial hub with significant industrial operations
+                taking place.
+              </li>
+              <li>
+                It serves as a disturbing alarm for the destructive impact of
+                industrial exploitation and production methods on the
+                environment. In certain areas like Lào Cai, Hanoi, and Ho Chi
+                Minh City, some manufacturing businesses have actually violated
+                regulations regarding safe operations and environmental
+                protection. Some of these businesses have faced penalties
+                imposed by the government. However, the number of violations
+                detected is significantly smaller compared to the actual number
+                of infringements taking place.
+              </li>
+              <li>
+                It is necessary to call for the awareness of the public, as we
+                cannot trade our health for money. There should be a form of
+                citizen intervention when detecting business misconduct by
+                corporations. Additionally, the government needs to closely
+                monitor and take strict actions against these violations.
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="row my-4">
+        <!-- <div class="row my-4">
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Authors table</h6>
@@ -783,7 +1037,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <footer class="footer pt-3">
           <div class="container-fluid">
             <div class="row align-items-center justify-content-lg-between">
